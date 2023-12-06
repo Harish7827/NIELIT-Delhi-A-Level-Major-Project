@@ -1,0 +1,407 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<!-- meta data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<!--font-family-->
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+
+	<!-- title of site -->
+	<title> Car Price Prediction </title>
+
+	<!-- For NIELIT_S jpg -->
+	<link rel="shortcut icon" type="image/icon" href="../Templates/assets/logo/NIELIT_S.jpg" />
+
+	<!--font-awesome.min.css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+	<!--linear icon css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/linearicons.css') }}">
+
+	<!--flaticon.css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+
+	<!--animate.css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+
+	<!--owl.carousel.css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+
+	<!--bootstrap.min.css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+	<!-- bootsnav -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootsnav.css') }}">
+
+	<!--style.css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<!--responsive.css-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body>
+	<!--welcome-hero start -->
+	<section id="home" class="welcome-hero">
+
+		<!-- top-area Start -->
+		<div class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+				<nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
+					data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+					<div class="container">
+
+						<!-- Start Header Navigation -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#navbar-menu">
+								<i class="fa fa-bars"></i>
+							</button>
+							<a class="navbar-brand" href="#"> NIELIT Delhi Project <span> "Car Price Prediction"
+								</span></a>
+
+						</div><!--/.navbar-header-->
+						<!-- End Header Navigation -->
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+							<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+								<li class=" scroll active"><a href="#home">home</a></li>
+								<li class="scroll"><a href="#brand">brands</a></li>
+								<li class="scroll"><a href="#contact">contact</a></li>
+							</ul><!--/.nav -->
+						</div><!-- /.navbar-collapse -->
+					</div><!--/.container-->
+				</nav><!--/nav-->
+				<!-- End Navigation -->
+			</div><!--/.header-area-->
+			<div class="clearfix"></div>
+
+		</div><!-- /.top-area-->
+		<!-- top-area End -->
+
+		<div class="container">
+			<div class="welcome-hero-txt">
+				<h2 style="color: rgb(217, 255, 1);"> NIELIT Delhi 'A' Level Project <br> using Machine Learning </h2>
+				<p>
+					Sell Your Car at Best Price Instanly <br>
+					Free Doorstep Inspection - Instant Payment - Hassle Free Documentation
+				</p>
+				<button class="welcome-btn" onclick="window.location.href='#'">contact us</button>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="model-search-content">
+						<div class="row">
+							<form action="{{ url_for('predict')}}" method="post">
+								<div class="col-md-offset-1 col-md-2 col-sm-12">
+									<div class="single-model-search">
+										<h2>select number of seats</h2>
+										<div>
+											<select name="seats" id="resea" class="form-control" required="required">
+												<option disabled="disabled" selected="selected"> Seats </option>
+												<!-- /.option-->
+												<option value="4"> 4 </option><!-- /.option-->
+												<option value="5"> 5 </option><!-- /.option-->
+												<option value="6"> 6 </option><!-- /.option-->
+												<option value="7"> 7 </option><!-- /.option-->
+												<option value="8"> 8 </option><!-- /.option-->
+												<option value="9"> 9 </option><!-- /.option-->
+												<option value="10"> 10 </option><!-- /.option-->
+											</select><!-- /.select-->
+										</div><!-- /.model-select-icon -->
+									</div>
+									<div class="single-model-search">
+										<h2>Select Year</h2>
+										<div>
+											<select name="year" id="resea" class="form-control" required="required">
+												<option disabled="disabled" selected="selected">Year</option>
+												<!-- /.option-->
+												<option value="2020">2020</option><!-- /.option-->
+												<option value="2019">2019</option><!-- /.option-->
+												<option value="2018">2018</option><!-- /.option-->
+												<option value="2017">2017</option><!-- /.option-->
+												<option value="2016">2016</option><!-- /.option-->
+												<option value="2015">2015</option><!-- /.option-->
+												<option value="2014">2014</option><!-- /.option-->
+												<option value="2013">2013</option><!-- /.option-->
+												<option value="2012">2012</option><!-- /.option-->
+												<option value="2011">2011</option><!-- /.option-->
+												<option value="2010">2010</option><!-- /.option-->
+												<option value="2009">2009</option><!-- /.option-->
+												<option value="2008">2008</option><!-- /.option-->
+												<option value="2007">2007</option><!-- /.option-->
+												<option value="2006">2006</option><!-- /.option-->
+												<option value="2005">2005</option><!-- /.option-->
+												<option value="2004">2004</option><!-- /.option-->
+											</select><!-- /.select-->
+										</div><!-- /.model-select-icon -->
+									</div>
+									<div class="single-model-search">
+										<h2>select Seller Type</h2>
+										<div>
+											<select name="seller_type" id="resea" class="form-control"
+												required="required">
+												<option disabled="disabled" selected="selected">Seller Type</option>
+												<!-- /.option-->
+												<option value="Individual">individual</option><!-- /.option-->
+												<option value="Dealer">Dealer</option><!-- /.option-->
+												<option value="Trustmark Dealer">Trustmark Dealer</option>
+												<!-- /.option-->
+											</select><!-- /.select-->
+										</div>
+									</div>
+									<div class="single-model-search">
+										<h2>select owner</h2>
+										<div>
+											<select name="owner" id="resea" class="form-control" required="required">
+												<option disabled="disabled" selected="selected">Owner</option>
+												<!-- /.option-->
+												<option value="First Owner">First Owner</option><!-- /.option-->
+												<option value="Second Owner">Second Owner</option><!-- /.option-->
+												<option value="Third Owner">Third Owner</option><!-- /.option-->
+												<option value="Fourth and Above Owner">Fourth and Above Owner</option>
+												<!-- /.option-->
+											</select><!-- /.select-->
+										</div><!-- /.model-select-icon -->
+									</div>
+								</div>
+								<div class="col-md-offset-1 col-md-2 col-sm-12">
+									<div class="single-model-search">
+										<h2>Enter KM Driven</h2>
+										<div>
+											<input name="km_driven" id="resea" type="text" class="form-control" ,
+												placeholder="KM Driven" required="required">
+										</div>
+									</div>
+									<div class="single-model-search">
+										<h2> Enter Mileage </h2>
+										<div>
+											<input name="mileage" id="resea" type="text" class="form-control" ,
+												placeholder="Mileage (km/ltr/kg)" required="required">
+										</div>
+									</div>
+									<div class="single-model-search">
+										<h2> Enter Max Power </h2>
+										<div>
+											<input name="max_power" id="resea" type="text" class="form-control" ,
+												placeholder="Max Power" required="required">
+										</div>
+									</div>
+									<div class="single-model-search">
+										<h2> Enter Engine CC </h2>
+										<div>
+											<input name="engine" id="resea" type="text" class="form-control" ,
+												placeholder="Engine CC" required="required">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-offset-1 col-md-2 col-sm-12">
+									<div class="single-model-search">
+										<h2> Select Fuel Type </h2>
+										<div>
+											<select name="fuel" id="resea" class="form-control" required="required">
+												<option disabled="disabled" selected="selected">Fuel Type</option>
+												<!-- /.option-->
+												<option value="Petrol">Petrol</option><!-- /.option-->
+												<option value="Diesel">Diesel</option><!-- /.option-->
+												<option value="CNG">CNG</option><!-- /.option-->
+												<option value="LPG">LPG</option><!-- /.option-->
+											</select><!-- /.select-->
+										</div><!-- /.model-select-icon -->
+									</div>
+									<div class="single-model-search">
+										<h2>select Transmission</h2>
+										<div>
+											<select name="transmission" id="resea" class="form-control"
+												required="required">
+												<option disabled="disabled" selected="selected">Transmission </option>
+												<!-- /.option-->
+												<option value="Automatic">Automatic</option><!-- /.option-->
+												<option value="Manual">Manual</option><!-- /.option-->
+											</select><!-- /.select-->
+										</div><!-- /.model-select-icon -->
+									</div>
+									<div class="single-model-search">
+										<h2 id="score"> {{ Valuation }} </h2>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-12">
+									<div class="single-model-search text-center">
+										<button class="welcome-btn model-search-btn" type="submit">
+											Check Valuation
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/.welcome-hero-->
+	<!--welcome-hero end -->
+
+	<!--brand strat -->
+	<br><br><br>
+	<section id="brand" class="brand">
+		<div class="container">
+			<div class="brand-area">
+				<div class="owl-carousel owl-theme brand-item">
+					<div class="item">
+						<a href="#">
+							<img src="{{ url_for('static', filename='images/brand/br1.png') }}" alt="brand-image" />
+						</a>
+					</div><!--/.item-->
+					<div class="item">
+						<a href="#">
+							<img src="{{ url_for('static', filename='images/brand/br2.png') }}" alt="brand-image" />
+						</a>
+					</div><!--/.item-->
+					<div class="item">
+						<a href="#">
+							<img src="{{ url_for('static', filename='images/brand/br3.png') }}" alt="brand-image" />
+						</a>
+					</div><!--/.item-->
+					<div class="item">
+						<a href="#">
+							<img src="{{ url_for('static', filename='images/brand/br4.png') }}" alt="brand-image" />
+						</a>
+					</div><!--/.item-->
+
+					<div class="item">
+						<a href="#">
+							<img src="{{ url_for('static', filename='images/brand/br5.png') }}" alt="brand-image" />
+						</a>
+					</div><!--/.item-->
+
+					<div class="item">
+						<a href="#">
+							<img src="{{ url_for('static', filename='images/brand/br6.png') }}" alt="brand-image" />
+						</a>
+					</div><!--/.item-->
+				</div><!--/.owl-carousel-->
+			</div><!--/.clients-area-->
+
+		</div><!--/.container-->
+
+	</section><!--/brand-->
+	<!--brand end -->
+
+	<!--contact start-->
+	<footer id="contact" class="contact">
+		<div class="container">
+			<div class="footer-top">
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-logo">
+								<a href="#">NIELIT Delhi <br> 'A' Level Project</a>
+							</div>
+							<div class="footer-contact">
+								<p>
+									This is a Major Project of 'A' Level Course. <br>
+									Name : Harish Chandra <br>
+									Batch : DIA-68 <br>
+									Roll No : 02 <br>
+									Registation No : 1420370 <br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-sm-6">
+						<div class="single-footer-widget">
+							<h2>about Project</h2>
+							The Car Price Prediction project seeks to develop a machine learning model to estimate the
+							value of used cars. In a market where determining fair prices for pre-owned vehicles can be
+							challenging, this project aims to alleviate this concern for buyers, sellers, and
+							dealerships. It will collect and preprocess a comprehensive dataset of used car listing,
+							including crucial attributes like make, model, years, mileage, location, and price. Through
+							feature engineering and selection, the model will consider a wide range of factors that
+							influence car prices.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="row">
+					<div class="col-sm-6">
+						<p>
+							&copy; copyright.designed and developed by Harish Chandra
+						</p><!--/p-->
+					</div>
+				</div>
+			</div><!--/.footer-copyright-->
+		</div><!--/.container-->
+
+		<div id="scroll-Top">
+			<div class="return-to-top">
+				<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title=""
+					data-original-title="Back to Top" aria-hidden="true"></i>
+			</div>
+
+		</div><!--/.scroll-Top-->
+
+	</footer><!--/.contact-->
+	<!--contact end-->
+
+	<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+	<script>
+		function validateForm() {
+			// Get input values
+			var kmDriven = document.getElementByName("km_driven").value;
+			var mileage = document.getElementByName("mileage").value;
+			var maxPower = document.getElementByName("max_power").value;
+			var engine = document.getElementByName("engine").value;
+			var seats = document.getElementsByName("seats").values;
+
+			// Validate numeric input
+			if (isNaN(kmDriven) || isNaN(mileage) || isNaN(maxPower) || isNaN(engine) || isNaN(seats)) {
+				alert("Please enter valid numeric values for KM Driven, Mileage, Max Power, Seats and Engine CC.");
+				return false;
+			}
+
+			return true; // Submit the form if validation passes
+		}
+	</script>
+
+
+	<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+	<!--modernizr.min.js-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+	<!--bootstrap.min.js-->
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+	<!-- bootsnav js -->
+	<script src="{{ url_for('static', filename='js/bootsnav.js') }}"></script>
+
+	<!--owl.carousel.js-->
+	<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+	<!--Custom JS-->
+	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+
+</body>
+
+</html>
